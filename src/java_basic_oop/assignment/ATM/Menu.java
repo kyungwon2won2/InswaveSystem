@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.assignment.ATM;
+package java_basic_oop.assignment.ATM;
 
 import java.util.Scanner;
 

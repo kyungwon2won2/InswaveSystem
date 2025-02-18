@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.src;
+package java_basic_oop.src;
 
 /*
 사원은 사번을 가지고있다. 숫자

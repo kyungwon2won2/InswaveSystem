@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.src;
+package java_basic_oop.src;
 
 /*
 마우스는 한 점을 가지고있다. (좌표 : x,y)

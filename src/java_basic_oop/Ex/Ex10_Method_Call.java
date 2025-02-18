@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.Ex;
+package java_basic_oop.Ex;
 
 /*
 함수 사용 parameter 값 전달 or 주소값(참조값) ref

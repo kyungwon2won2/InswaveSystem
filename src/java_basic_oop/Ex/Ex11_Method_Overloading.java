@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.Ex;
+package java_basic_oop.Ex;
 /*
 객체지향 프로그래밍 : 여러개의 작은 부품을 만들어서 큰 부품으로 조합하는 행위
 여러개의 작은 설계도를 만들어서 조합 -> 하나의 큰 설계도를 만드는 것

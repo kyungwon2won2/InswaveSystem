@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.Ex;
+package java_basic_oop.Ex;
 
 public class Ex09_Static_Method {
     void method(){

@@ -1,6 +1,6 @@
-package java_basic_oop.kosa.Ex;
+package java_basic_oop.Ex;
 
-import java_basic_oop.kosa.src.Book;
+import java_basic_oop.src.Book;
 
 public class Ex13_Book {
     public static void main(String[] args) {

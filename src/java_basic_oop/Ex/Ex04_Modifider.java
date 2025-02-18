@@ -1,8 +1,9 @@
-package java_basic_oop.kosa.Ex;
+package java_basic_oop.Ex;
 
-import java_basic_oop.kosa.src.Emp;
-import java_basic_oop.kosa.src.Mouse;
-import java_basic_oop.kosa.src.NoteBook;
+import java_basic_oop.src.Emp;
+import java_basic_oop.src.Mouse;
+import java_basic_oop.src.NoteBook;
+
 public class Ex04_Modifider {
 
     public static void main(String[] args) {

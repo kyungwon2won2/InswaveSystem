@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.Ex;
+package java_basic_oop.Ex;
 
 class Car7{
     String carColor;

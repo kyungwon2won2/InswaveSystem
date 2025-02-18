@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.Ex;
+package java_basic_oop.Ex;
 /*
 this 용법
 객체 자신을 가르키는 this

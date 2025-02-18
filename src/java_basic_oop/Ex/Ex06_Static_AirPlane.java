@@ -1,6 +1,6 @@
-package java_basic_oop.kosa.Ex;
+package java_basic_oop.Ex;
 
-import java_basic_oop.kosa.src.AirPlane;
+import java_basic_oop.src.AirPlane;
 
 public class Ex06_Static_AirPlane {
     public static void main(String[] args){

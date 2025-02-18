@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.Ex;
+package java_basic_oop.Ex;
 /*
 초기화
 1. static variable : 공유자원(객체간 공유자원)

@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.src;
+package java_basic_oop.src;
 
 /*
 노트북은 생산년도를 가지고있다. (고유정보)

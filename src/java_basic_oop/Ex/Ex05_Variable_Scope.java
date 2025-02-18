@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.Ex;
+package java_basic_oop.Ex;
 
 class Vclass{
     int iv;//instance variable - heap 영역 : garbage collector 소멸
@@ -25,10 +25,10 @@ class Vclass{
 
 public class Ex05_Variable_Scope {
     public static void main(String[] args) {
-        java_basic_oop.kosa.Ex.Vclass.cv = 200;
-        java_basic_oop.kosa.Ex.Vclass vc = new java_basic_oop.kosa.Ex.Vclass();
-        java_basic_oop.kosa.Ex.Vclass vc2 = new java_basic_oop.kosa.Ex.Vclass();
-        java_basic_oop.kosa.Ex.Vclass vc3 = new java_basic_oop.kosa.Ex.Vclass();
+        Vclass.cv = 200;
+        Vclass vc = new Vclass();
+        Vclass vc2 = new Vclass();
+        Vclass vc3 = new Vclass();
     }
 }
 

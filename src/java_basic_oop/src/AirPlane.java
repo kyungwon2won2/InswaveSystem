@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.src;
+package java_basic_oop.src;
 /*
 우리 회사는 비행기를 주문 제작 판매하는 회사입니다.
 우리 회사는 비행기를 생산하는 설계도를 만들려고 합니다.

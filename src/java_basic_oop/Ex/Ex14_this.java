@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.Ex;
+package java_basic_oop.Ex;
 /*
 this
 1.객체 자신을 가르키는 this (앞으로 생성될 객체의 주소를 담을 곳이라고 가정하고) 편리성

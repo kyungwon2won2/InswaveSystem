@@ -1,4 +1,4 @@
-package java_basic_oop.kosa.src;
+package java_basic_oop.src;
 
 /*
 책은 책이름, 가격정보를 가지고있다.

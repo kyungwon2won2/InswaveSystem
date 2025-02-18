@@ -1,4 +1,4 @@
-package java_basic_object.kr.Ex;
+package java_basic_object.Ex;
 /*
 배열은 객체다
 1.new를 통해서 생성
@@ -19,5 +19,31 @@ public class Ex01_Array {
         score[3] = 400;
         score[4] = 500;
 
+        //배열은 객체다 (new heap)
+        int[] arr4; //null 값. 메모리를 가지고 있지 않음
+        arr4 = new int[] {1,2,3,4,5};
+
+        int[] arr5 = arr4; // 주소값 할당
+        //같은 메모리를 보고있음.
+        //arr4==arr5 -> true : 같은 주소값을 가지고있음.
+
+        //배열을 만들 수 있는 타입 : 8가지 + 1가지(String) + 클래스
+        char[] carr = {'a', 'B', 'c'};
+
+        String[] strarr = new String[] { "가", "가나", "가나다"};
+        for (int i=0; i< strarr.length; i++){
+            System.out.println(strarr[i]);
+        }
+
+        //객체배열 - 그림으로 이해
+        Car[] cararr = new Car[3];
+        cararr[0] = new Car();
+        cararr[1] = new Car();
+        cararr[2] = new Car();
+
     }
+}
+
+class Car{
+
 }
