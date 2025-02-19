@@ -86,5 +86,17 @@ public class Ex11_Method_Overloading {
         Human h4 = t3.add(h3); // h4 -> 0xab 번지
         System.out.println(h4.name + " " + h4.age);
 
+        //어느 학생의 기말고사 시험점수 입니다. 5과목
+        int[] jumsu = {100, 55, 90, 60, 78};
+        int sum = 0;
+        float avg = 0f;
+        //1.총과목의수 2.과목의 합 3.과목의 평균      단, 조건은 2,3문제는 하나의 for문으로 해결
+        for(int i=0; i<jumsu.length; i++){
+            sum += jumsu[i];
+        }
+        avg = (float)sum/jumsu.length;
+
+        System.out.printf("총 과목수: %d, 총점: %d, 평균: %.1f", jumsu.length, sum, avg);
+
     }
 }
