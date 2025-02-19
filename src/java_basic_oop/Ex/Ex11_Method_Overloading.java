@@ -85,7 +85,6 @@ public class Ex11_Method_Overloading {
         Human h3 = new Human(); // h3 -> 0xab 번지
         Human h4 = t3.add(h3); // h4 -> 0xab 번지
         System.out.println(h4.name + " " + h4.age);
+
     }
-
-
 }
