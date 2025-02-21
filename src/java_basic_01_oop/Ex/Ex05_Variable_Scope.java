@@ -4,7 +4,7 @@ class Vclass{
     int iv;//instance variable - heap 영역 : garbage collector 소멸
     static int cv; //static variable - class area 영역 : 프로그램 종료 소멸
     /*
-    1.클래스 변수 = static variable - 객체간 공유자원
+    1.클래스 변수 : static variable - 객체간 공유자원
     2.목적 : 정보를 담는 것 (생성되는 모든 객체가 공유하는 정보)
         생성되는 객체(heap)
     3.접근방법 - 1. class 이름, static 자원 - java_basic_oop.kosa.Ex.Vclass.cv = 100; // new 없이 사용가능
