@@ -1,5 +1,6 @@
 package java_basic_04_oop.assignment;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,26 +10,27 @@ public class Lotto {
 
     private Scanner scan = new Scanner(System.in);
 
-    public void start(){ // 시작 - 메뉴 이동
+    public void start() { // 시작 - 메뉴 이동
 
-        while(true) {
+        while (true) {
             int choice = showMenu();
             switch (choice) {
-                case 1 :
+                case 1:
                     setNumber();
+                    System.out.println();
                     break;
-                case 2 :
+                case 2:
                     return;
             }
         }
     }
     // 메뉴이동 끝
 
-    public int showMenu(){ // 메뉴 보여주기
+    public int showMenu() { // 메뉴 보여주기
 
         int choice = 0;
 
-        while(true) { //while문과 try-catch로 재귀해결 및 예외처리
+        while (true) { //while문과 try-catch로 재귀해결 및 예외처리
             System.out.println("******************************");
             System.out.println("**********         ***********");
             System.out.println("**********  LOTTO  ***********");
@@ -46,30 +48,81 @@ public class Lotto {
 
             try {
                 choice = Integer.parseInt(scan.nextLine());
-            }catch (NumberFormatException e){ // 숫자 입력 검증
-                System.out.println("메뉴 범위 내로 입력해주세요.");
+                if (choice == 1 || choice == 2) {
+                    return choice;
+                } else {
+                    System.out.println("1 또는 2번 메뉴를 선택해주세요.");
+                    System.out.println();
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("숫자를 입력해주세요.");
+                System.out.println();
             }
         }
-        return choice;
     }
     // 메뉴화면 끝
 
-    public int[] setNumber(){
+    // 번호생성 및 출력
+    public void setNumber() {
         Random r = new Random();
-       lottoNum = new int[7];
-        for(int i=0; i<lottoNum.length; i++){
-            for(int j=0; j<i; j++){
-                if(lottoNum[i] != lottoNum[j]){
-                    lottoNum[j] = r.nextInt(45) + 1;
-                }else{
-                    i--;
-                }
+        lottoNum = new int[7];
+
+        while (true) {
+            // 중복 없는 숫자 생성
+            for (int i = 0; i < lottoNum.length; i++) {
+                int num;
+                boolean isDuplicate;
+
+                do {
+                    num = r.nextInt(45) + 1; // 1~45 사이의 난수 생성
+                    isDuplicate = false;
+
+                    // 중복 체크
+                    for (int j = 0; j < i; j++) {
+                        if (lottoNum[j] == num) {
+                            isDuplicate = true;
+                            break;
+                        }
+                    }
+                } while (isDuplicate); // 중복된 경우 다시 난수 생성
+
+                lottoNum[i] = num;
+            }
+
+            // 숫자 정렬
+            int[] sorArr = lottoNum.clone();
+            Arrays.sort(sorArr);
+
+            // 연속된 숫자가 4개 이상인지 확인
+            if (!validateNum(sorArr)) {
+                break; // 조건을 만족하면 루프 종료
             }
         }
 
-        for (int i = 0; i < lottoNum.length; i++) {
-            System.out.println(lottoNum[i]);
+        // 생성된 번호 출력
+        System.out.println("생성된 로또 번호:");
+        for (int num : lottoNum) {
+            System.out.print(num + " ");
         }
-        return lottoNum;
+        System.out.println();
     }
+    //번호생성 끝
+
+    //숫자 검증 - 4개숫자 연속 불가
+    public boolean validateNum(int[] num) {
+        int count = 1; // 연속된 숫자 개수 카운트
+
+        for (int i = 1; i < num.length; i++) {
+            if (num[i] == num[i - 1] + 1) { // 이전 숫자보다 1 큰 경우
+                count++;
+                if (count >= 4) { // 4개 이상 연속된 숫자가 존재하면 true 반환
+                    return true;
+                }
+            } else {
+                count = 1; // 연속되지 않으면 카운트 초기화
+            }
+        }
+        return false;
+    }
+    //숫자 검증 완료
 }
