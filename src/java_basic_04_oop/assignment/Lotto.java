@@ -20,6 +20,10 @@ public class Lotto {
                     System.out.println();
                     break;
                 case 2:
+                    setNumberValidate();
+                    System.out.println();
+                    break;
+                case 3:
                     return;
             }
         }
@@ -39,8 +43,9 @@ public class Lotto {
             System.out.println("------------------------------");
             System.out.println("--------메뉴를 선택해주세요-------");
             System.out.println("------------------------------");
-            System.out.println("         1. 로또 구매");
-            System.out.println("         2. 종료");
+            System.out.println("     1. 로또 일반 구매");
+            System.out.println("     2. 로또 연속번호 제외 구매");
+            System.out.println("     3. 종료");
             System.out.println("------------------------------");
             System.out.println("------------------------------");
             System.out.print("메뉴 선택 : ");
@@ -48,10 +53,10 @@ public class Lotto {
 
             try {
                 choice = Integer.parseInt(scan.nextLine());
-                if (choice == 1 || choice == 2) {
+                if (choice == 1 || choice == 2 || choice == 3) {
                     return choice;
                 } else {
-                    System.out.println("1 또는 2번 메뉴를 선택해주세요.");
+                    System.out.println("1 , 2또는 3번 메뉴를 선택해주세요.");
                     System.out.println();
                 }
             } catch (NumberFormatException e) {
@@ -62,8 +67,46 @@ public class Lotto {
     }
     // 메뉴화면 끝
 
-    // 번호생성 및 출력
+
     public void setNumber() {
+        Random r = new Random();
+        lottoNum = new int[7];
+
+        // 중복 없는 숫자 생성
+        for (int i = 0; i < lottoNum.length; i++) {
+            int num;
+            boolean isDuplicate;
+
+            do {
+                num = r.nextInt(45) + 1; // 1~45 사이의 난수 생성
+                isDuplicate = false;
+
+                // 중복 체크
+                for (int j = 0; j < i; j++) {
+                    if (lottoNum[j] == num) {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+            } while (isDuplicate); // 중복된 경우 다시 난수 생성
+
+            lottoNum[i] = num;
+        }
+
+        // 숫자 정렬
+        Arrays.sort(lottoNum);
+
+        // 생성된 번호 출력
+        System.out.println("생성된 로또 번호:");
+        for (int num : lottoNum) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+    //번호생성 끝
+
+    // 연속 4자리 검증 번호생성 및 출력
+    public void setNumberValidate() {
         Random r = new Random();
         lottoNum = new int[7];
 
@@ -107,6 +150,8 @@ public class Lotto {
         System.out.println();
     }
     //번호생성 끝
+
+
 
     //숫자 검증 - 4개숫자 연속 불가
     public boolean validateNum(int[] num) {
