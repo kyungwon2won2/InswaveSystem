@@ -104,7 +104,10 @@ class Scv extends GroundUnit implements Irepairable{
         //타입을 물어보고 그 타입에 맞게 논리를 나누어서...
         if(repairUnit instanceof Unit2){
             //Tank, scv
-            Unit2 unit = (Unit2)repairUnit; //down casting
+            //Unit2 unit = (Unit2)repairUnit; //down casting
+            //위의 코드보다 이렇게 하는게 더 좋다 - 모든 인터페이스를 object로 받을 수 있다.
+            Object obj = repairUnit;
+            Unit2 unit = (Unit2)obj;
             unit.hitPoint = this.MAX_HP;
         }else{
             //건물
