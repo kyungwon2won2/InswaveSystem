@@ -8,10 +8,12 @@ interface ToDo{
 class Car1{
     private String carNumber;
     private String model;
+    private Engine engine;
+    private Radio radio;
 
     Car1(){
-        Engine engine = new Engine();
-        Radio radio = new Radio();
+        this.engine = new Engine();
+        this.radio = new Radio();
     }
 
     public void move(){
@@ -31,6 +33,13 @@ class Person implements ToDo{
     private String name;
     private int age;
     private String address;
+
+    public Person(String name, int age, String address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+
     @Override
     public void eat() {
 
@@ -51,6 +60,13 @@ class Student extends Person{
     private String major;
     private Subject[] subjectList;
 
+    public Student(String name, int age, String address, Long studentId, String major) {
+        super(name, age, address);
+        this.studentId = studentId;
+        this.major = major;
+        this.subjectList = new Subject[10];
+    }
+
     public void study(){
 
     }
@@ -65,9 +81,18 @@ class Subject{
     private String subjectName;
     private Student[] studentList;
 
+    public Subject(Long subjectId, String subjectName) {
+        this.subjectId = subjectId;
+        this.subjectName = subjectName;
+        this.studentList = new Student[10];
+    }
+
     public void add(Student student){
 
     }
 }
 public class ClassDiagram {
+    public static void main(String[] args) {
+
+    }
 }
