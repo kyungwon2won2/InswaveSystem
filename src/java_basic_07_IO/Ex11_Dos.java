@@ -3,7 +3,7 @@ package java_basic_07_IO;
 import java.io.*;
 import java.util.Scanner;
 
-public class Ex10_Dos {
+public class Ex11_Dos {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
