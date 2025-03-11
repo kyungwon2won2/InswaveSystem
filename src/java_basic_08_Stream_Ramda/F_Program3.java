@@ -179,7 +179,7 @@ public class F_Program3 {
 
         //우리가 종착역 람다식을 구현한 Stream API
         //Stream API 람다식을 사용해서 함수적 프로그램을 구현
-        System.out.println("------------람다식-----------------------------------");
+        System.out.println("------------람다식 성별이 Male 추출-----------------------------------");
 
         List<Customer> results2 = new ArrayList<Customer>();
         results2 = service.searchCustomer(customer -> customer.getLocation().equals("Seoul") && customer.getAge()>40);
